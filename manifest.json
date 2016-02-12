@@ -1,5 +1,32 @@
 {
 	"manifest_version":2,
-	"name": "time",
-	"version":"0.1"
+	"name": "D time",
+	"version":"0.1",
+	"background":{
+		"scripts":[
+			"background.js"
+		]
+	},
+	"content_scripts":[
+		{
+			"matches":[
+				"https://www.facebook.com/*",
+				"http://www.facebook.com/*",
+				"https://www.twitter.com/*",
+				"http://www.twitter.com/*",
+				"https://www.reddit.com/*",
+				"http://www.reddit.com/*"
+			],
+			"js": [
+				"jquery-2.2.0.min.js",
+				"content.js"
+			]
+		}
+	],
+	"browser_action":{
+		"default_icon": "icon.png"
+	},
+	"permissions":[
+		"storage","alarms","notifications"
+	]
 }
